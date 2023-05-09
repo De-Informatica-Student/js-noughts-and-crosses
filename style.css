@@ -1,0 +1,33 @@
+/* De body wordt gebruikt voor stijl van de hele website */
+body {
+    /* We willen de content in het midden hebben */
+    margin: auto;
+
+    /* Dat geld ook specifiek voor de tekst */
+    text-align: center;
+}
+
+/* Een regel met knoppen */
+.row {
+    /* we willen wat ruimte hebben onder en boven */
+    margin: 10px 0;
+}
+
+/* Iedere knop die onderdeel is van een rij */
+.row button {
+    /* Maak er een vierkant van */
+    width: 50px;
+    height: 50px;
+
+    /* Pas de grootte van het lettertype aan */
+    font-size: 20px;
+}
+
+/* Stijling voor de reset knop */
+#reset {
+    /* Maak hem breeder */
+    width: 150px;
+
+    /* Zorg voor wat afstand tussen de knop en het veld */
+    margin-top: 25px;
+}

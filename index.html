@@ -1,0 +1,61 @@
+<!-- Vertel de browser dat deze te maken heeft met HTML5 -->
+<!DOCTYPE html>
+
+<!-- Begin het HTML document -->
+<html>
+    <!-- In 'head' geven we alle informatie voor de browser -->
+    <!-- Dit zijn dingen die de gebruiker niet direct ziet -->
+    <head>
+        <!-- De pagina heeft een titel nodig -->
+        <title>Boter Kaas en Eieren</title>
+
+        <!-- Geef aan waar de browser onze css en js kan vinden -->
+        <link rel="stylesheet" href="style.css">
+        <script src="app.js"></script>
+    </head>
+
+    <!-- De body is het gedeelte van de HTML pagina die de gebruiker ziet -->
+    <body>
+        <!-- De header van onze website -->
+        <header>
+            <!-- De titel van het spel -->
+            <h1>Boter, Kaas en Eieren</h1>
+
+            <!-- De status van het spel -->
+            <h3 id="turn-indicator">De beurt is aan kruisje</h3>
+        </header>
+
+        <!-- Het daadwerkelijke spel -->
+        <main>
+            <!-- Een regel met buttons -->
+            <!-- De buttons geven we een id met hun locatie op het veld -->
+            <div class="row">
+                <button id="tl" type="button"></button>
+                <button id="tc" type="button"></button>
+                <button id="tr" type="button"></button>
+            </div>
+
+            <!-- Een regel met buttons -->
+            <!-- De buttons geven we een id met hun locatie op het veld -->
+            <div class="row">
+                <button id="ml" type="button"></button>
+                <button id="mc" type="button"></button>
+                <button id="mr" type="button"></button>
+            </div>
+
+            <!-- Een regel met buttons -->
+            <!-- De buttons geven we een id met hun locatie op het veld -->
+            <div class="row">
+                <button id="bl" type="button"></button>
+                <button id="bc" type="button"></button>
+                <button id="br" type="button"></button>
+            </div>
+        </main>
+
+        <!-- De footer van de website -->
+        <footer>
+            <!-- De reset knop, laat de gebruiker het spel herstarten -->
+            <button id="reset" type="button">Reset</button>
+        </footer>
+    </body>
+</html>
