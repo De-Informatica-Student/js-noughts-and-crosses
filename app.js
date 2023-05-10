@@ -1,7 +1,7 @@
 // Variabelen voor het bijhouden van het spel
 let turnX = true;
-let finished = false;
 let turnCount = 1;
+let isFinished = false;
 
 // Een constante die de mogelijke winreeksen bevat
 // We gebruiken een drie-dimensionale reeks om een reeks ifjes te voorkomen
@@ -21,7 +21,7 @@ let turnIndicator = null;
 // als de pagina klaar is met laden
 window.onload = function () {
     // Stel de knoppen in voor het eerste gebruik.
-    resetButtons()
+    resetButtons();
 
     // Geef de reset knop de juiste functie
     document.getElementById('reset').onclick = reset;
@@ -38,14 +38,14 @@ window.onload = function () {
  */
 function move(event) {
     // Controleer of de knop leeg is en het spel nog bezig is
-    if (event.target.innerHTML === '&nbsp;' && !finished) {
+    if (event.target.innerHTML === '&nbsp;' && !isFinished) {
         // Verander de inhoud van de knop
         event.target.innerHTML = turnX ? 'X' : 'O';
         
         // Controleer de overwinnigsconditie
         if (checkWinCondition()) {
             // Het spel is voorbij
-            finished = true;
+            isFinished = true;
 
             // Gebruik de turnidicator voor het resultaat
             turnIndicator.innerHTML = turnX
@@ -56,7 +56,7 @@ function move(event) {
         // Controleer of het bord vol is
         else if (turnCount === 9) {
             // Het spel is voorbij
-            finished = true;
+            isFinished = true;
 
             // Geef het gelijke spel aan
             turnIndicator.innerHTML = "Gelijkspel"
@@ -81,7 +81,7 @@ function move(event) {
  */
 function reset() {
     // Reset de variabele naar hun originele waarde
-    finished = false;
+    isFinished = false;
     turnCount = 1;
 
     // Reset de knoppen en laat zien wie er aan de beurt is
@@ -125,6 +125,10 @@ function updateIndicator() {
  * Controleer of iemand heeft gewonnen
  */
 function checkWinCondition() {
+    // Maak een variabel aan om het resultaat op te slaan
+    // Standaard is deze waarde vals, hij veranderd als iemand 
+    let result = false;
+
     // Controleer voor iedere mogelijke combinatie of er is gewonnen
     winConditions.forEach(function (condition) {
         // Haal de inhoud van de knoppen uit de reeks op
@@ -137,11 +141,11 @@ function checkWinCondition() {
             // Controleer of er is gewonnen
             if (firstButton === secondButton && secondButton === thirdButton) {
                 // Er is gewonnen
-                return true;
+                result = true;
             }
         }
     });
     
     // Niemand heeft gewonnen
-    return false;
+    return result;
 }
